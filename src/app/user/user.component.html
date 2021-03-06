@@ -1,0 +1,260 @@
+<div class="container">
+    <div class="row">
+        <label for="title">
+            <h2> Users Componenet</h2>
+        </label>
+    </div>
+    <form class="form-control" [formGroup]="userForm" (ngSubmit)="validate()">
+        <div class="main container">
+
+            <!-- ********* ID Label ***********-->
+            <div class="row mb-3">
+                <label for="idUser"> <b> Id User</b></label>
+                <input type="number" class="form-control" name="idUser" id="idUser" formControlName="idUser"
+                    [ngClass]="{'is-invalid': submited && userForm.controls.idUser.invalid, 'is-valid': submited && userForm.controls.idUser.valid}">
+                <div *ngIf="userForm.controls.idUser.errors" class="invalid-feedback d-block">
+                    <div *ngIf="userForm.controls.idUser.errors.required && submited">
+                        Required fieldset
+                    </div>
+                </div>
+            </div>
+            <!-- ********* End of ID Label ***********-->
+
+
+            <!-- ********* Name Label ***********-->
+            <div class="row mb-3">
+                <label for="name"><b>Name</b></label>
+                <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                <input type="text" class="form-control" name="name" id="name" formControlName="name" placeholder="Name"
+                    [ngClass]="{'is-invalid': submited && userForm.controls.name.invalid, 'is-valid': submited && userForm.controls.name.valid}">
+                <div *ngIf="userForm.controls.name.errors" class="invalid-feedback d-block">
+                    <div *ngIf="userForm.controls.name.errors.required && submited">
+                        Required fieldset
+                    </div>
+                </div>
+            </div>
+            <!-- ********* End of Name Label ***********-->
+
+
+            <!-- ********* USER Name Label ***********-->
+            <div class="row mb-3">
+                <label for="nameUser"><b>User Name</b></label>
+                <input type="text" class="form-control" name="nameUser" id="nameUser" formControlName="nameUser"
+                    placeholder="User Name"
+                    [ngClass]="{'is-invalid': submited && userForm.controls.nameUser.invalid, 'is-valid': submited && userForm.controls.nameUser.valid}">
+                <div *ngIf="userForm.controls.nameUser.errors" class="invalid-feedback d-block">
+                    <div *ngIf="userForm.controls.nameUser.errors.required && submited">
+                        Required fieldset
+                    </div>
+                </div>
+            </div>
+            <!-- ********* End of USER Name Label ***********-->
+
+
+            <!-- ********* Email Label ***********-->
+            <div class="row mb-3">
+                <label for="email"><b>E-mail</b></label>
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend"><span class="input-group-text"
+                            aria-label="arobase"><b>xyz@Email</b></span>
+                    </div>
+                    <input type="email" class="form-control" name="email" id="email" formControlName="email"
+                        placeholder="E-mail User"
+                        [ngClass]="{'is-invalid': submited && userForm.controls.email.invalid, 'is-valid': submited && userForm.controls.email.valid}">
+                    <div *ngIf="userForm.controls.email.errors" class="invalid-feedback d-block">
+                        <div *ngIf="userForm.controls.email.errors.required && submited">
+                            Required fieldset
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- ********* End of Email Label ***********-->
+
+
+            <!-- ********* Adress formGroup Label ***********-->
+            <div class="row mb-3" formGroupName="adress">
+                <label for="adress"><b>Adress</b>
+
+
+                    <div class="row mb-3">
+
+                        <div class="col">
+                            <!-- <label for="street" class="col-auto col-form-label"><b>Street</b></label>     -->
+                            <input type="text" class="form-control" name="street" id="street" formControlName="street"
+                                placeholder="Street" [ngClass]="{'is-invalid': submited && adressForm.controls.street.invalid, 'is-valid': submited && adressForm.controls.street.valid}">
+                            <div *ngIf="adressForm.controls.street.errors"
+                                class="invalid-feedback d-block">
+                                 <div *ngIf="adressForm.controls.street.errors.required && submited">
+                                    Required fieldset
+                                </div> 
+                            </div>
+                        
+                        </div>
+
+                        <div class="col">
+                            <!-- <label for="suit" class="col-auto col-form-label"><b>Suit</b></label> -->
+                            <input type="text" class="form-control" name="suit" id="suit" formControlName="suit"
+                                placeholder="Suit" [ngClass]="{'is-invalid': submited && adressForm.controls.suit.invalid, 'is-valid': submited && adressForm.controls.suit.valid}">
+                                <div *ngIf="adressForm.controls.suit.errors"
+                                    class="invalid-feedback d-block">
+                                     <div *ngIf="adressForm.controls.suit.errors.required && submited">
+                                        Required fieldset
+                                    </div> 
+                                </div>
+                        </div>
+
+                    </div>
+
+                    <div class="row mb-3">
+
+                        <div class="col mb-3">
+                            <input type="text" class="form-control" name="city" id="city" formControlName="city"
+                                placeholder="City" [ngClass]="{'is-invalid': submited && adressForm.controls.city.invalid, 'is-valid': submited && adressForm.controls.city.valid}">
+                                <div *ngIf="adressForm.controls.city.errors"
+                                    class="invalid-feedback d-block">
+                                     <div *ngIf="adressForm.controls.city.errors.required && submited">
+                                        Required fieldset
+                                    </div> 
+                                </div>
+                        </div>
+
+                        <div class="col mb-3">
+                            <input type="text" class="form-control" name="zipcode" id="zipcode"
+                                formControlName="zipcode" placeholder="Zip Code" [ngClass]="{'is-invalid': submited && adressForm.controls.zipcode.invalid, 'is-valid': submited && adressForm.controls.zipcode.valid}">
+                                <div *ngIf="adressForm.controls.zipcode.errors"
+                                    class="invalid-feedback d-block">
+                                     <div *ngIf="adressForm.controls.zipcode.errors.required && submited">
+                                        Required fieldset
+                                    </div> 
+                                </div>
+                        </div>
+
+                    </div>
+
+
+                    <div class="row mb-3" formGroupName="geo">
+                        <label for="geo"><b>Geo</b></label>
+
+                        <div class="col mb-3">
+                            <input type="number" class="form-control" name="lat" id="lat" formControlName="lat"
+                                placeholder="latitude" [ngClass]="{'is-invalid': submited && geoForm.controls.lat.invalid, 'is-valid': submited && geoForm.controls.lat.valid}">
+                                <div *ngIf="geoForm.controls.lat.errors"
+                                    class="invalid-feedback d-block">
+                                     <div *ngIf="geoForm.controls.lat.errors.required && submited">
+                                        Required fieldset
+                                    </div> 
+                                </div>
+                        </div>
+
+                        <div class="col mb-3">
+                            <input type="number" class="form-control" name="long" id="long" formControlName="long"
+                                placeholder="longitude" [ngClass]="{'is-invalid': submited && geoForm.controls.long.invalid, 'is-valid': submited && geoForm.controls.long.valid}">
+                                <div *ngIf="geoForm.controls.long.errors"
+                                    class="invalid-feedback d-block">
+                                     <div *ngIf="geoForm.controls.long.errors.required && submited">
+                                        Required fieldset
+                                    </div> 
+                                </div>
+                        </div>
+
+                    </div>
+                </label>
+            </div>
+            <!-- ********* End of Adress formGroup Label ***********-->
+
+
+            <!-- ********* Phone Label ***********-->
+            <div class="row mb-3">
+                <label for="phone"><b>Phone</b></label>
+                <input type="number" class="form-control" name="phone" id="phone" formControlName="phone"
+                    placeholder="phone"
+                    [ngClass]="{'is-invalid': submited && userForm.controls.phone.invalid, 'is-valid': submited && userForm.controls.phone.valid}">
+                <div *ngIf="userForm.controls.phone.errors" class="invalid-feedback d-block">
+                    <div *ngIf="userForm.controls.phone.errors.required && submited">
+                        Required fieldset
+                    </div>
+                </div>
+            </div>
+            <!-- ********* End of Phone Label ***********-->
+
+
+            <!-- ********* WEB Site Label ***********-->
+            <div class="row mb-3">
+                <label for="webSite"><b>Web Site</b></label>
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend"><span class="input-group-text"
+                            id="url-base"><b>https://www.webSite.com/</b></span></div>
+
+                    <input type="text" class="form-control" name="webSite" id="webSite" formControlName="webSite"
+                        placeholder="webSite"
+                        [ngClass]="{'is-invalid': submited && userForm.controls.webSite.invalid, 'is-valid': submited && userForm.controls.webSite.valid}">
+                    <div *ngIf="userForm.controls.webSite.errors" class="invalid-feedback d-block">
+                        <div *ngIf="userForm.controls.webSite.errors.required && submited">
+                            Required fieldset
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- ********* End of WEB Site Label ***********-->
+
+
+            <!-- ********* Company formGroup Label ***********-->
+            <div class="row mb-3" formGroupName="company">
+                <label for="company"><b>Company</b></label>
+
+
+                <div class="row mb-3">
+                    <div class="col">
+                        <input type="text" class="form-control" name="nameComp" id="nameComp" formControlName="nameComp"
+                            placeholder="Name of Company" [ngClass]="{'is-invalid': submited && companyForm.controls.nameComp.invalid, 'is-valid': submited && companyForm.controls.nameComp.valid}">
+                            <div *ngIf="companyForm.controls.nameComp.errors"
+                                class="invalid-feedback d-block">
+                                 <div *ngIf="companyForm.controls.nameComp.errors.required && submited">
+                                    Required fieldset
+                                </div> 
+                            </div>
+                    </div>
+                </div>
+
+
+                <div class="row mb-3">
+
+
+                    <div class="col">
+                        <input type="text" class="form-control" name="catchPhrase" id="catchPhrase"
+                            formControlName="catchPhrase" placeholder="Catch Phrase" [ngClass]="{'is-invalid': submited && companyForm.controls.catchPhrase.invalid, 'is-valid': submited && companyForm.controls.catchPhrase.valid}">
+                            <div *ngIf="companyForm.controls.catchPhrase.errors"
+                                class="invalid-feedback d-block">
+                                 <div *ngIf="companyForm.controls.catchPhrase.errors.required && submited">
+                                    Required fieldset
+                                </div> 
+                            </div>
+                    </div>
+
+                    <div class="col">
+                        <input type="text" class="form-control" name="bs" id="bs" formControlName="bs"
+                            placeholder="B S" [ngClass]="{'is-invalid': submited && companyForm.controls.bs.invalid, 'is-valid': submited && companyForm.controls.bs.valid}">
+                            <div *ngIf="companyForm.controls.bs.errors"
+                                class="invalid-feedback d-block">
+                                 <div *ngIf="companyForm.controls.bs.errors.required && submited">
+                                    Required fieldset
+                                </div> 
+                            </div>
+                    </div>
+                    
+                </div>
+            </div>
+            <!-- ********* End of Company formGroup Label ***********-->
+
+
+            <!-- ********* Button Label ***********-->
+            <div class="row mb-3">
+                <input type="submit" name="valider" class="btn btn-success btn-lg btn-block" value="Ajouter">
+                <input type="button" name="valider" class="btn btn-secondary btn-lg btn-block" value="GetAllUsers" (click)="getUsers()">
+            </div>
+            <!-- ********* End of Button Label ***********-->
+
+
+        </div>
+    </form>
+</div>

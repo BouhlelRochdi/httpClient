@@ -1,0 +1,24 @@
+<div class="container mt-5">
+    <label for="idprodut">
+        <h2>List Users</h2>
+    </label>
+    <div>
+    <form class="form-control">
+        <table class="table table-bordred table-hover table-striped">
+            <tr>
+                <th>Email User</th>
+                <th>Name User</th>
+                <th>phone</th>
+                <th>Adress -Street- User</th>
+            </tr>
+            <tr *ngFor="let data of users; let i = index">
+                <td>{{data.email}}</td>
+                <td>{{data.name}}</td>
+                <td>{{data.phone}}</td>
+                <td>{{data.address.street}}</td>
+            </tr>
+            
+        </table>
+    </form>
+    </div>  
+</div>
